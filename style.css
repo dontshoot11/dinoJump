@@ -26,23 +26,49 @@
   height: 50px;
   background: url("img/dino.gif") center 16px no-repeat;
   background-size: contain;
-  position: relative;
-  top: 150px;
+  position: absolute;
+  bottom: 0px;
+}
+#dinoResults {
+  width: 50px;
+  height: 50px;
+}
+#dinoResults.animate {
+  animation: showDinoResults 500ms linear;
 }
 #agave {
   width: 40px;
   height: 40px;
   background: url("img/agave.png") center 10px no-repeat;
   background-size: contain;
-  position: relative;
-  top: 110px;
+  position: absolute;
+  bottom: 0px;
   left: 580px;
 }
-#agave.animated {
-  animation: cactusMove 1s infinite linear;
+#agave.animate {
+  animation: cactusMove 1.5s infinite linear;
 }
+#bonus {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  bottom: 0px;
+  left: -100;
+  visibility: hidden;
+}
+#bonus.activeBonus:not(.health) {
+  visibility: visible;
+  background: url("img/money.png") center no-repeat;
+  background-size: contain;
+}
+#bonus.health {
+  visibility: visible;
+  background: url("img/heart.png") center no-repeat;
+  background-size: contain;
+}
+
 .jump {
-  animation: dinoJump 0.3s linear;
+  animation: dinoJump 500ms ease-in-out;
 }
 
 @keyframes cactusMove {
@@ -56,18 +82,23 @@
 
 @keyframes dinoJump {
   0% {
-    top: 150px;
-  }
-  30% {
-    top: 130px;
+    bottom: 0px;
   }
   50% {
-    top: 80px;
-  }
-  80% {
-    top: 130px;
+    bottom: 80px;
   }
   100% {
-    top: 150px;
+    bottom: 0px;
+  }
+}
+
+@keyframes showDinoResults {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
   }
 }
