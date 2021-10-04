@@ -90,4 +90,4 @@ let spawnBonus = setInterval(() => {
       state.bonus.className = `activeBonus ${randomNumber}`;
     }
   }
-}, 25000);
+}, 15000);
