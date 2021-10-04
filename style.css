@@ -1,3 +1,10 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.disclaimer {
+  text-align: center;
+}
 .game {
   width: 600px;
   height: 200px;

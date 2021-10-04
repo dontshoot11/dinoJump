@@ -1,5 +1,5 @@
-import { state } from "./state.js";
-import { showDinoResults } from "./showDinoResults.js";
+import { state } from "../state.js";
+import { showDinoResults } from "../showDinoResults.js";
 
 const addBonus = function () {
   state.bonus.style.left = "-100px";

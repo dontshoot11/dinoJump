@@ -8,7 +8,7 @@ import {
   getBonusLeft,
 } from "./js/coordinates.js";
 import { getRandomNumber } from "./js/randomNumber.js";
-import { addBonus } from "./js/addBonus.js";
+import { addBonus } from "./js/bonuses/addBonus.js";
 import { startNewGame } from "./js/gameStatus/startNewGame.js";
 import { pauseSwitch } from "./js/gameStatus/pauseSwitch.js";
 import { exitToMenu } from "./js/gameStatus/exitToMenu.js";

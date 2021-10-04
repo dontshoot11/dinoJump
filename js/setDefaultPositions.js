@@ -6,8 +6,6 @@ const setDefaultPositions = function () {
   setTimeout(function () {
     state.agave.style.animation = "";
   }, 10);
-  state.bonus.style.left = "-100px";
-  state.bonus.className = "";
 };
 
 export { setDefaultPositions };
