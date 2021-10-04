@@ -5,7 +5,7 @@ const addBonus = function () {
   state.bonus.style.left = "-100px";
   if (state.bonus.classList.contains("health")) {
     state.lives += 1;
-    state.livesTable.textContent = lives;
+    state.livesTable.textContent = state.lives;
     showDinoResults("+1");
     state.bonus.className = "";
     return;
