@@ -28,6 +28,7 @@
   background-size: contain;
   position: absolute;
   bottom: 0px;
+  transition: bottom 200ms;
 }
 #dinoResults {
   width: 50px;
@@ -47,6 +48,15 @@
 }
 #agave.animate {
   animation: cactusMove 1.5s infinite linear;
+}
+#pause {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 100px;
+  width: 50px;
+  height: 20px;
+  animation: blink 1000ms infinite steps(1, end);
 }
 #bonus {
   height: 20px;
@@ -99,6 +109,18 @@
   }
   100% {
     transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
     opacity: 0;
   }
 }
