@@ -1,25 +1,33 @@
 import { state } from "./state.js";
 
-const getDinoLeft = function () {
-  return parseInt(window.getComputedStyle(state.dino).getPropertyValue("left"));
+const getDinoLeft = function() {
+    return state.dino.getBoundingClientRect().left;
 };
-const getDinoRight = function () {
-  return getDinoLeft() + 50;
+const getDinoRight = function() {
+    return state.dino.getBoundingClientRect().right;
 };
-const getDinoBottom = function () {
-  return parseInt(
-    window.getComputedStyle(state.dino).getPropertyValue("bottom")
-  );
+const getDinoBottom = function() {
+    return state.dino.getBoundingClientRect().bottom;
 };
-const getAgaveLeft = function () {
-  return (
-    parseInt(window.getComputedStyle(state.agave).getPropertyValue("left")) + 20
-  );
+const getObstacleLeft = function() {
+    return state.obstacle.getBoundingClientRect().left;
 };
-const getBonusLeft = function () {
-  return (
-    parseInt(window.getComputedStyle(state.bonus).getPropertyValue("left")) + 20
-  );
+const getObstacleTop = function() {
+    return state.obstacle.getBoundingClientRect().top;
+};
+const getBonusLeft = function() {
+    return state.bonus.getBoundingClientRect().left;
+};
+const getBonusTop = function() {
+    return state.bonus.getBoundingClientRect().top;
 };
 
-export { getDinoLeft, getDinoRight, getDinoBottom, getAgaveLeft, getBonusLeft };
+export {
+    getDinoLeft,
+    getDinoRight,
+    getDinoBottom,
+    getObstacleLeft,
+    getObstacleTop,
+    getBonusLeft,
+    getBonusTop,
+};

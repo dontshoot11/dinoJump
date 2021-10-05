@@ -1,26 +1,28 @@
-import { getDinoLeft } from "./coordinates.js";
 import { state } from "./state.js";
 
-const jump = function () {
-  const dinoJumped = state.dino.classList.contains("jump");
-  if (!dinoJumped) {
-    state.dino.classList.add("jump");
-  }
-  setTimeout(() => {
-    state.dino.classList.remove("jump");
-  }, 500);
+const jump = function() {
+    if (!state.dinoJumped) {
+        state.dinoJumped = true;
+        state.dino.classList.add("jump");
+        setTimeout(() => {
+            state.dino.classList.remove("jump");
+            state.dinoJumped = false;
+        }, 750);
+    }
 };
 
-const goRight = function () {
-  if (getDinoLeft() + 10 < 600) {
-    state.dino.style.left = `${getDinoLeft() + 10}px`;
-  }
+const goRight = function() {
+    if (state.dinoMoveX + 15 < 600) {
+        state.dinoMoveX += 15;
+        state.dino.style.left = `${state.dinoMoveX}px`;
+    }
 };
 
-const goLeft = function () {
-  if (getDinoLeft() - 10 >= 0) {
-    state.dino.style.left = `${getDinoLeft() - 10}px`;
-  }
+const goLeft = function() {
+    if (state.dinoMoveX - 15 >= 0) {
+        state.dinoMoveX -= 15;
+        state.dino.style.left = `${state.dinoMoveX}px`;
+    }
 };
 
 export { jump, goRight, goLeft };
