@@ -18,6 +18,10 @@ import { setDefaultPositions } from "./js/setDefaultPositions.js";
 import { showDinoResults } from "./js/showDinoResults.js";
 import { setDoomsday } from "./js/setDoomsday.js";
 
+import {speechInit} from './js/voiceRecognition.js'
+
+speechInit()
+
 document.addEventListener("keydown", (e) => {
     e.preventDefault();
     if (e.code === "Space") {
