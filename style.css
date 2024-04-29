@@ -1,175 +1,175 @@
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+	max-width: 800px;
+	margin: 0 auto;
 }
 .disclaimer {
-  text-align: center;
+	text-align: center;
 }
 #game {
-  width: 700px;
-  height: 400px;
-  border-bottom: 1px solid #000;
-  margin: 0 auto;
-  position: relative;
-  transition: background-color 300ms;
-}
-#game.apocalypse1 {
-  background-color: RGBA(139, 181, 255, 0.4);
-}
-#game.apocalypse2 {
-  background-color: RGBA(255, 172, 88, 0.4);
+	width: 700px;
+	height: 400px;
+	border-bottom: 1px solid #000;
+	margin: 0 auto;
+	position: relative;
+	transition: background-color 300ms;
 }
 #game.apocalypse3 {
-  background-color: RGBA(255, 110, 88, 0.4);
+	background-color: RGBA(139, 181, 255, 0.4);
 }
-#game.apocalypse4 {
-  background-color: RGBA(255, 83, 52, 0.4);
+#game.apocalypse2 {
+	background-color: RGBA(255, 172, 88, 0.4);
 }
-#game.apocalypse5 {
-  background-color: RGBA(255, 15, 5, 0.6);
+#game.apocalypse1 {
+	background-color: RGBA(255, 110, 88, 0.4);
+}
+#game.apocalypse0 {
+	background-color: RGBA(255, 83, 52, 0.4);
+}
+#game.apocalypse666 {
+	background-color: RGBA(255, 15, 5, 0.6);
 }
 #lives {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50px;
-  height: 20px;
-  border: 1px solid #000;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50px;
+	height: 20px;
+	border: 1px solid #000;
 }
 #score {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 50px;
-  height: 20px;
-  border: 1px solid #000;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50px;
+	height: 20px;
+	border: 1px solid #000;
 }
 #asteroid {
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  background: url("img/asteroid.png") center no-repeat;
-  background-size: contain;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
-  transition: transform 500ms;
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	background: url("img/asteroid.png") center no-repeat;
+	background-size: contain;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	transition: transform 500ms;
 }
-#asteroid.apocalypse1 {
-  transform: translate(30px, 30px);
+.apocalypse3 #asteroid {
+	transform: translate(30px, 30px);
 }
-#asteroid.apocalypse2 {
-  transform: translate(50px, 50px) scale(1.5);
+.apocalypse2 #asteroid {
+	transform: translate(50px, 50px) scale(1.5);
 }
-#asteroid.apocalypse3 {
-  transform: translate(100px, 100px) scale(2);
+.apocalypse1 #asteroid {
+	transform: translate(100px, 100px) scale(2);
 }
-#asteroid.apocalypse4 {
-  transform: translate(200px, 200px) scale(3);
+.apocalypse0 #asteroid {
+	transform: translate(200px, 200px) scale(3);
 }
-#asteroid.apocalypse5 {
-  transform: translate(300px, 360px) scale(5);
+.apocalypse666 #asteroid {
+	transform: translate(300px, 360px) scale(5);
 }
 #dino {
-  width: 100px;
-  height: 84px;
-  background: url("img/dino.png") center no-repeat;
-  background-size: contain;
-  position: absolute;
-  bottom: 0px;
-  transition: bottom 200ms;
+	width: 100px;
+	height: 84px;
+	background: url("img/dino.png") center no-repeat;
+	background-size: contain;
+	position: absolute;
+	bottom: 0px;
+	transition: bottom 200ms;
 }
 #dinoResults {
-  width: 50px;
-  height: 50px;
+	width: 50px;
+	height: 50px;
 }
 #dinoResults.animate {
-  animation: showDinoResults 500ms linear;
+	animation: showDinoResults 500ms linear;
 }
 #obstacle {
-  width: 40px;
-  height: 34px;
-  background: url("img/skull.png") center no-repeat;
-  background-size: cover;
-  position: absolute;
-  bottom: 0px;
-  left: 660px;
+	width: 40px;
+	height: 34px;
+	background: url("img/skull.png") center no-repeat;
+	background-size: cover;
+	position: absolute;
+	bottom: 0px;
+	transform: translateX(660px);
 }
 #obstacle.animate {
-  animation: cactusMove 1.5s infinite linear;
+	animation: cactusMove 1.5s infinite linear;
 }
 #pause {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  bottom: 250px;
-  width: 50px;
-  height: 20px;
-  animation: blink 1000ms infinite steps(1, end);
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	bottom: 250px;
+	width: 50px;
+	height: 20px;
+	animation: blink 1000ms infinite steps(1, end);
 }
 #bonus {
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  bottom: 0px;
-  left: -100;
-  visibility: hidden;
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	bottom: 0px;
+	left: -100;
+	visibility: hidden;
 }
 #bonus.activeBonus:not(.health) {
-  visibility: visible;
-  background: url("img/money.png") center no-repeat;
-  background-size: contain;
+	visibility: visible;
+	background: url("img/money.png") center no-repeat;
+	background-size: contain;
 }
 #bonus.health {
-  visibility: visible;
-  background: url("img/heart.png") center no-repeat;
-  background-size: contain;
+	visibility: visible;
+	background: url("img/heart.png") center no-repeat;
+	background-size: contain;
 }
 
 .jump {
-  animation: dinoJump 750ms ease-in-out;
+	animation: dinoJump 750ms ease-in-out;
 }
 
 @keyframes cactusMove {
-  0% {
-    left: 660px;
-  }
-  100% {
-    left: -20px;
-  }
+	0% {
+		transform: translateX(660px);
+	}
+	100% {
+		transform: translateX(-20px);
+	}
 }
 
 @keyframes dinoJump {
-  0% {
-    bottom: 0px;
-  }
-  50% {
-    bottom: 100px;
-  }
-  100% {
-    bottom: 0px;
-  }
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-100px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 
 @keyframes showDinoResults {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
 }
 
 @keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
