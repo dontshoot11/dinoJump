@@ -17,6 +17,7 @@ import { exitToMenu } from "./js/gameStatus/exitToMenu.js";
 import { setDefaultPositions } from "./js/setDefaultPositions.js";
 import { showDinoResults } from "./js/showDinoResults.js";
 import { setDoomsday } from "./js/setDoomsday.js";
+import { setObstacleSpeed } from "./js/setObstacleSpeed.js";
 
 document.addEventListener("keydown", (e) => {
 	e.preventDefault();
@@ -38,9 +39,9 @@ document.addEventListener("keydown", (e) => {
 
 function gameLoop() {
 	if (state.gameStatus === "running") {
+		setObstacleSpeed();
 		if (state.lives >= 0) {
 			setDoomsday(state.lives);
-
 			if (
 				getDinoBottom() >= getObstacleTop() &&
 				getObstacleLeft() < getDinoRight() &&
@@ -58,7 +59,6 @@ function gameLoop() {
 				state.score++;
 				state.scoreTable.textContent = state.score;
 			}
-
 			if (
 				state.bonus.classList.contains("activeBonus") &&
 				getDinoBottom() >= getBonusTop() &&
@@ -71,7 +71,6 @@ function gameLoop() {
 			setDoomsday(666);
 			alert(`Game Over. Your score is ${state.score}`);
 			exitToMenu();
-			return;
 		}
 	}
 	requestAnimationFrame(gameLoop);
@@ -101,4 +100,4 @@ let spawnBonus = setInterval(() => {
 			state.bonus.className = `activeBonus ${randomNumber}`;
 		}
 	}
-}, 15000);
+}, 5000);

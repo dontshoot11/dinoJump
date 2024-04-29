@@ -10,6 +10,7 @@ const state = {
 	livesTable: document.querySelector("#lives"),
 	pauseTable: document.querySelector("#pause"),
 	dinoJumped: false,
+	obstacleSpeed: 1.5,
 	dinoMoveX: Number,
 	dinoMoveY: Number,
 	score: Number,

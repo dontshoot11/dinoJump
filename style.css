@@ -12,6 +12,7 @@
 	margin: 0 auto;
 	position: relative;
 	transition: background-color 300ms;
+	overflow: hidden;
 }
 #game.apocalypse3 {
 	background-color: RGBA(139, 181, 255, 0.4);
@@ -45,6 +46,7 @@
 	border: 1px solid #000;
 }
 #asteroid {
+	opacity: 0;
 	position: absolute;
 	height: 20px;
 	width: 20px;
@@ -53,21 +55,26 @@
 	border-radius: 50%;
 	top: 0;
 	left: 0;
-	transition: transform 500ms;
+	transition: all 500ms;
 }
 .apocalypse3 #asteroid {
+	opacity: 1;
 	transform: translate(30px, 30px);
 }
 .apocalypse2 #asteroid {
+	opacity: 1;
 	transform: translate(50px, 50px) scale(1.5);
 }
 .apocalypse1 #asteroid {
+	opacity: 1;
 	transform: translate(100px, 100px) scale(2);
 }
 .apocalypse0 #asteroid {
+	opacity: 1;
 	transform: translate(200px, 200px) scale(3);
 }
 .apocalypse666 #asteroid {
+	opacity: 1;
 	transform: translate(300px, 360px) scale(5);
 }
 #dino {
@@ -96,7 +103,7 @@
 	transform: translateX(660px);
 }
 #obstacle.animate {
-	animation: cactusMove 1.5s infinite linear;
+	animation: cactusMove infinite linear;
 }
 #pause {
 	position: absolute;
